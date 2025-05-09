@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Hand Spinner</title>
+  <style>
+    body {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .spinner {
+      width: 300px;
+      height: 300px;
+      background-image: url(spinner.jpg);
+      background-size: cover;
+      background-position: center;
+      transition: transform 2s ease-out;
+      cursor: pointer;
+    }
+    .spin {
+      animation: spin 2s ease-out forwards;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(5deg);
+      }
+      80% {
+        transform: rotate(4240deg);
+      }
+      100% {
+        transform: rotate(4270deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner" onclick="girar()"></div>
+  <script>
+    function girar() {
+      const spinner = document.querySelector('.spinner');
+      spinner.classList.remove('spin');
+      void spinner.offsetWidth;
+      spinner.classList.add('spin');
+    }
+  </script>
+</body>
+</html>
